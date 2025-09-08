@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BHel party — Collect Money</title>
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --accent:#0f62fe;
+      --muted:#6b7280;
+      --radius:14px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg,var(--bg),#eef2ff);
+      padding:32px;
+      color:#0f172a;
+    }
+
+    .container{
+      width:100%;
+      max-width:920px;
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 8px 30px rgba(12,18,45,0.08);
+      padding:28px;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:24px;
+      align-items:start;
+    }
+
+    @media (max-width:840px){
+      .container{grid-template-columns:1fr; padding:20px}
+    }
+
+    .left{ padding-right:8px; }
+    h1{ margin:0 0 8px 0; font-size:32px; }
+    .subtitle{ margin:0 0 18px 0; color:var(--muted); font-size:15px; }
+
+    .description{
+      background:#fbfdff;
+      border-radius:10px;
+      padding:14px;
+      border:1px solid rgba(12,18,45,0.04);
+      margin-bottom:18px;
+      color:#071135;
+    }
+
+    .form-row{display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap}
+    input[type="text"]{
+      flex:1;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid rgba(12,18,45,0.08);
+      font-size:14px;
+    }
+    button{
+      background:var(--accent);
+      color:white;
+      border:0;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    button.secondary{
+      background:transparent;
+      border:1px solid rgba(12,18,45,0.08);
+      color:#0f172a;
+    }
+
+    .qr-card{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      border-radius:12px;
+      border:1px dashed rgba(12,18,45,0.06);
+      background:linear-gradient(180deg,#fff,#fbfcff);
+    }
+
+    .qr-image{
+      width:260px;
+      height:260px;
+      display:block;
+      object-fit:contain;
+      background:white;
+      padding:12px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(12,18,45,0.06);
+    }
+    .small{ font-size:13px; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>BHel party</h1>
+      <p class="subtitle">Join us for the BHel party — food, music and good company. Use the QR code to contribute money securely.</p>
+      <div class="description">
+        <strong>Date & Time:</strong> Saturday, 27th September, 7:00 PM<br>
+        <strong>Venue:</strong> Community Hall, Sector 9<br><br>
+        We're gathering to celebrate together — will be great to see you!
+      </div>
+    </div>
+    <aside class="qr-card">
+      <img id="qr-img" class="qr-image" alt="QR code for BHel party payment" src="https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=BHel%20party%20%E2%80%94%20contribute%20here" />
+      <div class="small">Scan to contribute</div>
+    </aside>
+  </div>
+</body>
+</html>
